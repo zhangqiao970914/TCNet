@@ -1,1 +1,1 @@
-# TCNet-Co-Salient-Object-Detection-via-Parallel-Interaction-of-Transformers-and-CNNs
+# TCNet:Co-salient Object Detection via Parallel Interaction of Transformers and CNNs
