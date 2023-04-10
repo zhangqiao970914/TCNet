@@ -11,7 +11,7 @@ test_num_thread = 4
 
 # An example to build "test_roots".
 test_roots = dict()
-datasets = [ 'MSRC','ICoSeg','CoSal2015','CoSOD3K','CoCA']
+datasets = ['CoSal2015','CoSOD3K','CoCA']
 
 for dataset in datasets:
     roots = {'img': '/user-data/ICNet_Depth/Dataset/dataset_rgb/{}/images/'.format(dataset)}
