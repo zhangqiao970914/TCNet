@@ -1,5 +1,5 @@
 # TCNet
-* This project provides the code and results for 'TCNet:Co-salient Object Detection via Parallel Interaction of Transformers and CNNs', IEEE TCSVT,[IEEE](https://ieeexplore.ieee.org/abstract/document/9968016)
+* This project provides the code and results for 'TCNet:Co-salient Object Detection via Parallel Interaction of Transformers and CNNs', [IEEE TCSVT](https://ieeexplore.ieee.org/abstract/document/9968016)
 # Network Architecture
 ![image](https://github.com/zhangqiao970914/TCNet/blob/main/image/TCNet.png)
 # Result
