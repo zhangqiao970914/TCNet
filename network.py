@@ -438,7 +438,7 @@ class ICNet(nn.Module):
         # Backbone
         self.vgg = VGG16()
         parser = argparse.ArgumentParser()
-        parser.add_argument('--pretrained_model', default='/HOME/scz1605/run/T/T/ICNet/80.7_T2T_ViT_t_14.pth.tar',
+        parser.add_argument('--pretrained_model', default='/hy-tmp/TCNet-main/80.7_T2T_ViT_t_14.pth.tar',
                             type=str, help='load Pretrained model')
         args = parser.parse_args()
         self.rgb_backbone = T2t_vit_t_14(pretrained=True, args=args)
@@ -478,9 +478,9 @@ class ICNet(nn.Module):
         conv5_3 = self.vgg(conv4_3, 'conv4_3_mp', 'conv5_3_mp')  # shape=[N, 512, 14, 14]
         sa = self.sa(conv5_3, rgb_fea_1_16)  # [64,14,14]
 
-        x5 = self.ct5(self.conv512_64(conv5_3), self.conv512_64(t_value), sa)
-        x4 = self.ct4(self.conv512_64(conv4_3), self.conv512_64(self.upsample2(t_value)), self.upsample2(sa))
-        x3 = self.ct3(self.conv256_64(conv3_3), self.conv512_64(self.upsample4(t_value)), self.upsample4(sa))
+        x5 = self.ccm5(self.conv512_64(conv5_3), self.conv512_64(t_value), sa)
+        x4 = self.ccm4(self.conv512_64(conv4_3), self.conv512_64(self.upsample2(t_value)), self.upsample2(sa))
+        x3 = self.ccm3(self.conv256_64(conv3_3), self.conv512_64(self.upsample4(t_value)), self.upsample4(sa))
 
         S_3_pred, S_4_pred, S_5_pred, S_g_pred = self.decoder(x5, x4, x3)
 
